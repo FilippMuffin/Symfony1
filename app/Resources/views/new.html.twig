@@ -5,12 +5,34 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>}Welcome!</title>
+    <title>}Welcome{</title>
+    <style>
+        #top {margin-left: 28%;margin-right: 15%;}
+        #main{margin-left: 35%;margin-top: 5%;}
+        body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
+        #wrapper {
+            position: relative;
+        //margin-left: 30%;
+            background: #FFF;
+            margin: 1em auto;
+            max-width: 800px;
+            width: 95%;
+        }
+    </style>
 </head>
 <body>
-{{ form_start(form) }}
-{{ form_widget(form) }}
-{{ form_end(form) }}
-<a href="{{ path('all') }}" >Вроде кнопка</a>
+    <div id = wrapper>
+        <div id = top >
+          <h1> Добро пожаловать на онлайн склад</h1>
+          <h3>Добавте что-то новое:</h3>
+        </div>
+        <div id = main >
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+            <a href="{{ path('all') }}" >Зайти на склад</a>
+        </div>
+    </div>
 </body>
+
 </html>

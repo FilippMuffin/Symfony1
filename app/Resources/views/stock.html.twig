@@ -1,17 +1,43 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}
+STOK
+{% endblock %}
 {% block body %}
-    <div id = wrapper>
+    <div class = wrapper>
+        <table>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Manufacturer</td>
+                <td>Qty</td>
+                <td>Price</td>
+            </tr>
         {% for one in product %}
-            <option>{{ one }}</option>
+                <tr>
+                    <td>{{ one.getId }}</td>
+                    <td>{{ one.getName }}</td>
+                    <td>{{ one.getManufacturer }}</td>
+                    <td>{{ one.getQty }}</td>
+                    <td>{{ one.getPrice }}</td>
+                </tr>
         {% endfor %}
+        </table>
     </div>
+    <a href="{{ path('add') }}" style="margin-left: 45%" >Добавить</a>
 {% endblock %}
 
 {% block stylesheets %}
     <style>
         body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
-        #wrapper { background: #FFF; margin: 1em auto; max-width: 800px; width: 95%; }
+        .wrapper {
+            position: relative;
+            //margin-left: 30%;
+            background: #FFF;
+            margin: 1em auto;
+            max-width: 800px;
+            width: 95%;
+        }
         h { line-height: 1.2; margin: 0 0 .5em; font-size: 36px; }
+        table {margin-left: 28%; border-spacing: 15px;}
     </style>
 {% endblock %}

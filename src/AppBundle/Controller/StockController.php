@@ -24,7 +24,7 @@ use Symfony\Component\HttpFoundation\Response;
 class StockController extends Controller
 {
     /**
-     * @Route("/stock")
+     * @Route("/stock", name="add")
      */
     public function create(Request $request)
     {
@@ -50,7 +50,6 @@ class StockController extends Controller
             $em->persist($product);
             $em->flush();
 
-            return new Response('Added');
 
             }
 
